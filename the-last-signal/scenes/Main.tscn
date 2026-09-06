@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://chu5gynoahajk"]
+
+[ext_resource type="Script" uid="uid://bkr0le1jdfhxs" path="res://scenes/player.gd" id="1_elqb8"]
+[ext_resource type="PackedScene" uid="uid://thi162opwemc" path="res://scenes/player.tscn" id="2_rvslj"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rnb7f"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rnb7f"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rnb7f"]
+size = Vector3(30, 0.5, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rnb7f"]
+size = Vector3(30, 0.5, 30)
+
+[sub_resource type="Environment" id="Environment_xm1qb"]
+background_mode = 1
+background_color = Color(0.0009581964, 0.00031939882, 0.00015969941, 1)
+ambient_light_energy = 0.15
+
+[node name="Player" type="CharacterBody3D" unique_id=380969891]
+script = ExtResource("1_elqb8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1369652942]
+mesh = SubResource("CapsuleMesh_rnb7f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1782837289]
+shape = SubResource("CapsuleShape3D_rnb7f")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=810770225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D" unique_id=657777608]
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=1796200355]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=1239287143]
+mesh = SubResource("BoxMesh_rnb7f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=776286946]
+shape = SubResource("BoxShape3D_rnb7f")
+
+[node name="Player" parent="." unique_id=2071843888 instance=ExtResource("2_rvslj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1823895261]
+environment = SubResource("Environment_xm1qb")

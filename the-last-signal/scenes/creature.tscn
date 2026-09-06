@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bb4hlw7vtpvo0"]
+
+[ext_resource type="Script" uid="uid://djid70jvqbbsl" path="res://scenes/creature.gd" id="1_upmfi"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rnb7f"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rnb7f"]
+
+[node name="Creature" type="Node2D" unique_id=1136827233]
+
+[node name="Creature" type="CharacterBody3D" parent="." unique_id=1613810439]
+script = ExtResource("1_upmfi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Creature" unique_id=1320572324]
+mesh = SubResource("CapsuleMesh_rnb7f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Creature" unique_id=1542748283]
+shape = SubResource("CapsuleShape3D_rnb7f")

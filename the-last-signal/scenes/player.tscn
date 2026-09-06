@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://thi162opwemc"]
+
+[ext_resource type="Script" uid="uid://bkr0le1jdfhxs" path="res://scenes/player.gd" id="1_3vyb7"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rnb7f"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rnb7f"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rnb7f"]
+size = Vector3(30, 0.5, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rnb7f"]
+size = Vector3(30, 0.5, 30)
+
+[node name="Player" type="CharacterBody3D" unique_id=380969891]
+script = ExtResource("1_3vyb7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1369652942]
+mesh = SubResource("CapsuleMesh_rnb7f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1782837289]
+shape = SubResource("CapsuleShape3D_rnb7f")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=810770225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D" unique_id=1557066410]
+light_energy = 3.0
+spot_range = 12.0
+spot_angle = 35.0
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=1796200355]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=1239287143]
+mesh = SubResource("BoxMesh_rnb7f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=776286946]
+shape = SubResource("BoxShape3D_rnb7f")
