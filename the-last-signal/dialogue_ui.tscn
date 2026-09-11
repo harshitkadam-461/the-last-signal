@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cbd725rf7lr2c"]
+
+[ext_resource type="Script" uid="uid://cyyq50nsp5vbm" path="res://dialogue_ui.gd" id="1_njptv"]
+
+[node name="DialogueUI" type="CanvasLayer" unique_id=1172758142]
+script = ExtResource("1_njptv")
+
+[node name="Panel" type="Panel" parent="." unique_id=642966063]
+custom_minimum_size = Vector2(0, 140)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Text" type="Label" parent="Panel" unique_id=861865744]
+custom_minimum_size = Vector2(1120, 80)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 45.0
+offset_right = 1135.0
+offset_bottom = 125.0
+theme_override_font_sizes/font_size = 17
+autowrap_mode = 2
+
+[node name="Continue" type="Label" parent="Panel" unique_id=1710798463]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -124.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+theme_override_font_sizes/font_size = 13
+text = "[SPACE to continue]"
+
+[node name="Speaker" type="Label" parent="Panel" unique_id=1491327468]
+layout_mode = 0
+offset_left = 15.0
+offset_top = -493.0
+offset_right = 55.0
+offset_bottom = -465.0
+theme_override_colors/font_color = Color(1, 0.8156863, 0, 1)
+theme_override_font_sizes/font_size = 20
